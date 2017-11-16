@@ -1,10 +1,16 @@
 package InfoSupport.ForeverSpring.SchoolApp.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "userexercises")
@@ -12,23 +18,24 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class UserExercise {
-    @Id
-    @Column(name = "userexercise_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+  @Id
+  @Column(name = "userexercise_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    @OneToOne
-    @JoinColumn(name = "exercise_id")
-    private Exercise exercise;
+  @OneToOne
+  @JoinColumn(name = "user_id")
+  private User user;
 
-    @Column(name = "status")
-    private String status;
+  @OneToOne
+  @JoinColumn(name = "exercise_id")
+  private Exercise exercise;
 
-    @Column(name = "comment")
-    private String comment;
+  @Column(name = "status")
+  private String status;
+
+  @Column(name = "comment")
+  private String comment;
 
 }

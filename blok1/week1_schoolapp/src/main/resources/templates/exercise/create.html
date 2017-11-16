@@ -32,16 +32,19 @@
             <input type="hidden" th:field="*{id}"/>
 
             <div th:if="${#fields.hasErrors('*')}">
-              <div layout:include="views/fragments/alert :: alert" th:with="type='danger', header='Fouten in het formulier'" th:remove="tag">
+              <div layout:include="views/fragments/alert :: alert"
+                   th:with="type='danger', header='Fouten in het formulier'" th:remove="tag">
                 <!--/* Implements alert summary fragment with full-blown HTML summary */-->
                 <th:block layout:fragment="alert-summary">
-                  <p>Niet alle velden in het formulier zijn correct ingevuld. Corrigeer deze en verzend opnieuw.</p>
+                  <p>Niet alle velden in het formulier zijn correct ingevuld. Corrigeer deze en
+                    verzend opnieuw.</p>
                   <!--<p><button type="button" class="btn btn-danger">Take this action</button></p>-->
                 </th:block>
               </div>
             </div>
             <div th:if="${exception}">
-              <div layout:include="views/fragments/alert :: alert" th:with="type='danger', header='Fouten in het formulier'" th:remove="tag">
+              <div layout:include="views/fragments/alert :: alert"
+                   th:with="type='danger', header='Fouten in het formulier'" th:remove="tag">
                 <!--/* Implements alert summary fragment with full-blown HTML summary */-->
                 <th:block layout:fragment="alert-summary">
                   <p th:text="${exception}">Exception message</p>
@@ -80,17 +83,17 @@
                 </div>
 
                 <!--<div class="form-group">-->
-                  <!--<label for="start">Start Date</label>-->
-                  <!--&lt;!&ndash; th:field="*{name}" is de koppeling naar het attribuut 'name' van het object 'member'&ndash;&gt;-->
-                  <!--<input type="date" class="form-control" id="start" th:field="*{start}"/>-->
-                  <!--<p th:if="${#fields.hasErrors('start')}" th:errors="*{start}">Name Error</p>-->
+                <!--<label for="start">Start Date</label>-->
+                <!--&lt;!&ndash; th:field="*{name}" is de koppeling naar het attribuut 'name' van het object 'member'&ndash;&gt;-->
+                <!--<input type="date" class="form-control" id="start" th:field="*{start}"/>-->
+                <!--<p th:if="${#fields.hasErrors('start')}" th:errors="*{start}">Name Error</p>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<label for="end">End Date</label>-->
-                  <!--&lt;!&ndash; th:field="*{name}" is de koppeling naar het attribuut 'name' van het object 'member'&ndash;&gt;-->
-                  <!--<input type="date" class="form-control" id="end" th:field="*{end}"/>-->
-                  <!--<p th:if="${#fields.hasErrors('end')}" th:errors="*{end}">Name Error</p>-->
+                <!--<label for="end">End Date</label>-->
+                <!--&lt;!&ndash; th:field="*{name}" is de koppeling naar het attribuut 'name' van het object 'member'&ndash;&gt;-->
+                <!--<input type="date" class="form-control" id="end" th:field="*{end}"/>-->
+                <!--<p th:if="${#fields.hasErrors('end')}" th:errors="*{end}">Name Error</p>-->
                 <!--</div>-->
               </div>
             </div>
